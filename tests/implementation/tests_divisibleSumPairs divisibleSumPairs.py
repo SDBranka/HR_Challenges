@@ -24,7 +24,7 @@ if __name__ == '__main__':
 
 
 
-# #9 Divisible Sum Pairs
+# #8 Divisible Sum Pairs
 # https://www.hackerrank.com/challenges/divisible-sum-pairs/problem?h_r=next-challenge&h_v=zen
 # Given an array of integers and a positive integer k,
 # determine the number of (i, j) pairs where i < j and

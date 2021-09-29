@@ -18,7 +18,7 @@ if __name__ == '__main__':
 
 
 
-# #6 Equalize the Array
+# #5 Equalize the Array
 # https://www.hackerrank.com/challenges/equality-in-a-array/problem
 # Given an array of integers, determine the minimum number
 # of elements to delete to leave only elements of equal value.

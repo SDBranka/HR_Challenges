@@ -30,7 +30,7 @@ if __name__ == '__main__':
 
 
 
-# #7 Electronics Shop
+# #6 Electronics Shop
 # https://www.hackerrank.com/challenges/electronics-shop/problem
 # A person wants to determine the most expensive computer
 # keyboard and USB drive that can be purchased with a 

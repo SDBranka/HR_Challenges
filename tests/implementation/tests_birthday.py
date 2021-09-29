@@ -50,7 +50,7 @@ if __name__ == '__main__':
 
 
 
-# #8 Subarray Division
+# #7 Subarray Division
 # https://www.hackerrank.com/challenges/the-birthday-bar/problem?h_r=next-challenge&h_v=zen
 # Two children, Lily and Ron, want to share a chocolate
 # bar. Each of the squares has an integer on it.

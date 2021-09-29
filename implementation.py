@@ -126,8 +126,6 @@ def birthday(s, d, m):
     return count
 
 
-
-
 def divisibleSumPairs(n, k, ar):
     pairs = 0
 

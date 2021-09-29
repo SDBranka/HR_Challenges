@@ -5,14 +5,17 @@ import re
 import sys
 
 
+# 1
 def solveMeFirst(a,b):
     return a + b
 
 
+# 2
 def simpleArraySum(ar):
     return(sum(ar))
 
 
+# 3
 def compareTriplets(a, b):
     score1 = 0
     score2 = 0
@@ -25,10 +28,12 @@ def compareTriplets(a, b):
     return [score1, score2]
 
 
+# 4
 def aVeryBigSum(ar):
     return(sum(ar))
 
 
+# 5
 def diagonalDifference(arr):
     n = len(arr)
     total = 0
@@ -38,6 +43,7 @@ def diagonalDifference(arr):
     return abs(total)
 
 
+# 6
 def plusMinus(arr):
     n = len(arr)
     pos = 0
@@ -55,6 +61,7 @@ def plusMinus(arr):
     print("{:.6f}".format(zeros /n))
 
 
+# 7
 def staircase(n):
     for i in range(n):
         step = ""
@@ -67,6 +74,7 @@ def staircase(n):
         print(step)
 
 
+# 8
 def miniMaxSum0(arr):
     arr_max = max(arr)
     arr_min = min(arr)
@@ -85,6 +93,7 @@ def miniMaxSum0(arr):
     print(f"{min_sum} {max_sum}")
 
 
+# 9
 def miniMaxSum1(arr):
     max_sum = sum(arr) - min(arr)
     min_sum = sum(arr) - max(arr)
@@ -92,10 +101,12 @@ def miniMaxSum1(arr):
     print(f"{min_sum} {max_sum}")
 
 
+# 10
 def birthdayCakeCandles(candles):
     return candles.count(max(candles))
 
 
+# 11
 def timeConversion(s):
     hour = s[0]+s[1]
     day_half = s[8] + s[9]

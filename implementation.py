@@ -5,6 +5,7 @@ import re
 import sys
 
 
+# 1
 def gradingStudents(grades):
     for i in range(len(grades)):
         if grades[i] >= 38:
@@ -15,6 +16,7 @@ def gradingStudents(grades):
     return grades
 
 
+# 2
 def countApplesAndOranges(s, t, a, b, apples, oranges):
     apple_distances = list(map(lambda x: x + a, apples))
     # print(apple_distances)
@@ -32,6 +34,7 @@ def countApplesAndOranges(s, t, a, b, apples, oranges):
     print(b_count)
 
 
+# 3
 def kangaroo(x1, v1, x2, v2):
     # 10000
     for i in range(10000):
@@ -44,6 +47,7 @@ def kangaroo(x1, v1, x2, v2):
             return "NO"
 
 
+# 4
 def breakingRecords(scores):
     max_score = scores[0]
     max_count = 0
@@ -61,6 +65,7 @@ def breakingRecords(scores):
     return [max_count, min_count]
 
 
+# 5
 def equalizeArray(arr):
     min_num_deletions = 0
 
@@ -88,6 +93,7 @@ def equalizeArray(arr):
     return min_num_deletions
 
 
+# 6
 def getMoneySpent(keyboards, drives, b):
     max_budget = 0
     # comparer the prices of each available pair
@@ -107,6 +113,7 @@ def getMoneySpent(keyboards, drives, b):
     return max_budget
 
 
+# 7
 def birthday(s, d, m):
     count = 0
 
@@ -126,6 +133,7 @@ def birthday(s, d, m):
     return count
 
 
+# 8
 def divisibleSumPairs(n, k, ar):
     pairs = 0
 
@@ -136,4 +144,22 @@ def divisibleSumPairs(n, k, ar):
                     pairs +=1
     return pairs
 
+
+# 10
+def migratoryBirds(arr):
+    bird_dict = { "Type 1" : arr.count(1),
+                "Type 2" : arr.count(2),
+                "Type 3" : arr.count(3),
+                "Type 4" : arr.count(4),
+                "Type 5" : arr.count(5)
+    }
+    # print(bird_dict)
+    # print(max(bird_dict.values()))
+
+    for key in bird_dict:
+        # print(key)
+        if bird_dict[key] == max(bird_dict.values()):
+            key_split = key.split()
+            # print(key_split)
+            return int(key_split[1])
 

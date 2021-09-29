@@ -13,7 +13,7 @@ class test_breakingRecords(unittest.TestCase):
         scores = [10, 5, 20, 20, 4, 5, 2, 25, 1]
         self.assertEqual(breakingRecords(scores), [2, 4])
 
-    def testZero(self):
+    def testOne(self):
         scores = [3, 4, 21, 36, 10, 28, 35, 5, 24, 42]
         self.assertEqual(breakingRecords(scores), [4, 0])
 

@@ -1,7 +1,7 @@
 import unittest
 import sys
 sys.path.append("../..")
-from main import equalizeArray
+from implementation import equalizeArray
 
 
 class test_equalizeArray(unittest.TestCase):

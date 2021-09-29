@@ -2,7 +2,7 @@ import io
 import unittest
 import unittest.mock
 import sys
-sys.path.append("..")
+sys.path.append("../..")
 from implementation import countApplesAndOranges
 
 class test_countApplesAndOranges(unittest.TestCase):

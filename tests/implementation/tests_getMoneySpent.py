@@ -1,7 +1,7 @@
 import unittest
 import sys
 sys.path.append("../..")
-from main import getMoneySpent
+from implementation import getMoneySpent
 
 
 class test_getMoneySpent(unittest.TestCase):

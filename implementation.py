@@ -147,6 +147,7 @@ def divisibleSumPairs(n, k, ar):
 
 # 10
 def migratoryBirds(arr):
+    # gather the quantity of each type of bird
     bird_dict = { "Type 1" : arr.count(1),
                 "Type 2" : arr.count(2),
                 "Type 3" : arr.count(3),
@@ -158,8 +159,45 @@ def migratoryBirds(arr):
 
     for key in bird_dict:
         # print(key)
+        # the first one found will be the lowest type value
         if bird_dict[key] == max(bird_dict.values()):
             key_split = key.split()
             # print(key_split)
+            # return the integer of the key that corresponds to the highest number of birds in that type
             return int(key_split[1])
 
+
+# 11
+def dayOfProgrammer0(year):
+    # sum the days of the month from jan -> aug - feb (31 + 31 + 30 + 31 + 30 + 31 + 31)
+    base_day_count = 215
+
+    # determine if it was a leap year and add feb to the day count
+    if (year <= 1917 and year %4 == 0)\
+        or (year % 400 == 0)\
+        or (year % 4 == 0 and (year % 100 != 0)):    
+        base_day_count += 29
+    elif year == 1918:
+        base_day_count += 15
+    else:
+        base_day_count += 28
+
+    # find the 256 day
+    prog_day = ".09."
+    date_str = 256 - base_day_count
+    year_str = str(year)
+    # concantenate return string
+    prog_day = f"{date_str}{prog_day}{year_str}"
+    return prog_day
+
+
+def dayOfProgrammer1(year):
+    if (year == 1918):
+        return "26.09.1918"
+    elif ((year <= 1917) & (year%4 == 0)) or ((year > 1918) & (year%400 == 0 or ((year%4 == 0) & (year%100 != 0)))):
+        return '12.09.%s' %year
+    else:
+        return '13.09.%s' %year
+
+
+# 12

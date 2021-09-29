@@ -1,7 +1,8 @@
 import unittest
 import sys
-sys.path.append("..")
+sys.path.append("../..")
 from warmup_challenges import compareTriplets
+
 
 class test_compareTriplets(unittest.TestCase):
     def testOne(self):
@@ -13,9 +14,6 @@ class test_compareTriplets(unittest.TestCase):
         a = [5, 6, 7]
         b = [3, 6, 10]
         self.assertEqual(compareTriplets(a, b), [1, 1])
-
-
-
 
 
 

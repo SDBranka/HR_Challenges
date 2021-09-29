@@ -1,0 +1,5 @@
+- Queens Attack 2 not done
+- can't get tests_countApplesAndOranges to run
+- Between Two Sets not started
+    -ask for help in group
+        written in main

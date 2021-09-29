@@ -1,7 +1,8 @@
 import unittest
 import sys
-sys.path.append("..")
+sys.path.append("../..")
 from main import equalizeArray
+
 
 class test_equalizeArray(unittest.TestCase):
     def testOne(self):
@@ -9,9 +10,6 @@ class test_equalizeArray(unittest.TestCase):
 
     def testTwo(self):
         self.assertEqual(equalizeArray([3, 3, 2, 1, 3]), 2)
-
-
-
 
 
 

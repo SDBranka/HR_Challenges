@@ -1,7 +1,8 @@
 import unittest
 import sys
-sys.path.append("..")
+sys.path.append("../..")
 from warmup_challenges import diagonalDifference
+
 
 class test_diagonalDifference(unittest.TestCase):
     def testOne(self):
@@ -17,7 +18,6 @@ class test_diagonalDifference(unittest.TestCase):
                 [9, 8, 9]  
                 ]
         self.assertEqual(diagonalDifference(arr), 2)
-
 
 
 

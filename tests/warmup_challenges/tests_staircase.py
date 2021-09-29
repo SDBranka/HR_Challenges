@@ -2,11 +2,11 @@ import io
 import unittest
 import unittest.mock
 import sys
-sys.path.append("..")
+sys.path.append("../..")
 from warmup_challenges import staircase
 
-class test_staircase(unittest.TestCase):
 
+class test_staircase(unittest.TestCase):
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def assert_stdout(self, n, expected_output, mock_stdout):
         staircase(n)

@@ -201,3 +201,51 @@ def dayOfProgrammer1(year):
 
 
 # 12
+def bonAppetit(bill, k, b):
+    b_actual = (sum(bill) - bill[k]) / 2
+
+    if b > b_actual:
+        print(round(b - b_actual))
+    else:
+        print("Bon Appetit")
+
+
+# 13
+def pageCount(n, p):
+    # make a book
+    # print(tuple(range(0, n + 1, 1)))
+    if n % 2 != 0:
+        book_max = n + 1
+    else:
+        book_max = n + 2
+    book = (tuple(range(0, book_max, 1)))
+    forward_turn_count = 0
+    backward_turn_count = 0
+
+    # forward count
+    i = 0
+    while i <= n:
+        if book[i] == p or book[i+1] == p:
+            # print("front found")
+            break
+        else:
+            forward_turn_count +=1
+            i += 2
+    # print(forward_turn_count)
+
+    # backward count
+    i = n
+    # if odd number of pages
+    if n % 2 != 0:
+        i -= 1
+    while n >= 0:
+        if book[i] == p or book[i+1] == p:
+            # print("back found")
+            break
+        else:
+            backward_turn_count += 1
+            i -=2
+    # print(f"back = {backward_turn_count}")
+    # print(min(forward_turn_count, backward_turn_count))
+
+    return min(forward_turn_count, backward_turn_count)

@@ -2,7 +2,7 @@ import io
 import unittest
 import unittest.mock
 import sys
-sys.path.append("../..")
+sys.path.append("..")
 from warmup_challenges import timeConversion
 
 
@@ -27,7 +27,6 @@ class test_miniMaxSum0(unittest.TestCase):
     def testFour(self):
         s = "10:01:00PM"
         self.assert_stdout(s, "22:01:00")
-
 
 
 if __name__ == '__main__':

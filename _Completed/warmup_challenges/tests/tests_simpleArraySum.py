@@ -1,6 +1,6 @@
 import unittest
 import sys
-sys.path.append("../..")
+sys.path.append("..")
 from warmup_challenges import simpleArraySum
 
 
@@ -12,7 +12,6 @@ class test_simpleArraySum(unittest.TestCase):
     def testTwo(self):
         ar = [1, 2, 3, 4, 10, 11]
         self.assertEqual(simpleArraySum(ar), 31)
-
 
 
 if __name__ == '__main__':

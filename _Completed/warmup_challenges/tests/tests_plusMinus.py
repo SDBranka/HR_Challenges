@@ -2,7 +2,7 @@ import io
 import unittest
 import unittest.mock
 import sys
-sys.path.append("../..")
+sys.path.append("..")
 from warmup_challenges import plusMinus
 
 
@@ -23,7 +23,6 @@ class test_simpleArraySum(unittest.TestCase):
     def testThree(self):
         ar = [1, 2, 3, -1, -2, -3, 0, 0]
         self.assertEqual(arr, "0.375000\n0.375000\n0.250000")
-
 
 
 if __name__ == '__main__':

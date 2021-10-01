@@ -1,6 +1,6 @@
 import unittest
 import sys
-sys.path.append("../..")
+sys.path.append("..")
 from warmup_challenges import solveMeFirst
 
 
@@ -14,7 +14,6 @@ class test_solveMeFirst(unittest.TestCase):
         a = 2
         b = 3
         self.assertEqual(solveMeFirst(a, b), 5)
-
 
 
 if __name__ == '__main__':

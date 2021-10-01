@@ -1,6 +1,6 @@
 import unittest
 import sys
-sys.path.append("../..")
+sys.path.append("..")
 from warmup_challenges import birthdayCakeCandles
 
 

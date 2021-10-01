@@ -2,7 +2,7 @@ import io
 import unittest
 import unittest.mock
 import sys
-sys.path.append("../..")
+sys.path.append("..")
 from warmup_challenges import staircase
 
 
@@ -15,7 +15,6 @@ class test_staircase(unittest.TestCase):
     def testOne(self):
         n = 6
         self.assert_stdout(n, "     #\n    ##\n   ###\n  ####\n #####\n######\n")
-
 
 
 if __name__ == '__main__':

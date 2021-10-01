@@ -2,7 +2,7 @@ import io
 import unittest
 import unittest.mock
 import sys
-sys.path.append("../..")
+sys.path.append("..")
 from warmup_challenges import miniMaxSum0, miniMaxSum1
 
 
@@ -26,7 +26,6 @@ class test_miniMaxSum1(unittest.TestCase):
     def testOne(self):
         arr = [1, 2, 3, 4, 5]
         self.assert_stdout(arr, "10 14")
-
 
 
 if __name__ == '__main__':
@@ -77,7 +76,6 @@ if __name__ == '__main__':
 # The numbers are 1, 2, 3, 4, and 5. Calculate the 
 # following sums using four of the five integers:
 #     Sum everything except 1, the sum is 2 + 3 + 4 + 5 = 14.
-
 
 # Hints: Beware of integer overflow! Use 64-bit Integer.
 # Need help to get started? Try the Solve Me First problem

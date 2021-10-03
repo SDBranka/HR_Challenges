@@ -1,6 +1,6 @@
 import unittest
 import sys
-sys.path.append("../..")
+sys.path.append("..")
 from implementation import getMoneySpent
 
 
@@ -22,7 +22,6 @@ class test_getMoneySpent(unittest.TestCase):
         keyboards = [4]
         drives = [5]
         self.assertEqual(getMoneySpent(keyboards, drives, b), -1)
-
 
 
 if __name__ == '__main__':

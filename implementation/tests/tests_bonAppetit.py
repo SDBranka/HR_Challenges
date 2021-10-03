@@ -1,7 +1,7 @@
 import unittest
 import io
 import sys
-sys.path.append("../..")
+sys.path.append("..")
 from implementation import bonAppetit
 
 

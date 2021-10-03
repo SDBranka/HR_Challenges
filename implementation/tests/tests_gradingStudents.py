@@ -1,6 +1,6 @@
 import unittest
 import sys
-sys.path.append("../..")
+sys.path.append("..")
 from implementation import gradingStudents
 
 
@@ -20,7 +20,6 @@ class test_gradingStudents(unittest.TestCase):
                                                     100, 60, 47, 4, 86, 61, 70, 17, 45, 6, 1, 
                                                     95, 95]
                                                     )
-
 
 
 if __name__ == '__main__':

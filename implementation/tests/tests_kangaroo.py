@@ -1,6 +1,6 @@
 import unittest
 import sys
-sys.path.append("../..")
+sys.path.append("..")
 from implementation import kangaroo
 
 
@@ -25,7 +25,6 @@ class test_kangaroo(unittest.TestCase):
         x2 = 5
         v2 = 3
         self.assertEqual(kangaroo(x1, v1, x2, v2), "NO")
-
 
 
 if __name__ == '__main__':

@@ -1,6 +1,6 @@
 import unittest
 import sys
-sys.path.append("../..")
+sys.path.append("..")
 from implementation import getTotalX
 
 
@@ -16,6 +16,8 @@ class test_getTotalX(unittest.TestCase):
         self.assertEqual(getTotalX(a, b), 2)
 
 
-
 if __name__ == '__main__':
     unittest.main()       
+
+
+    

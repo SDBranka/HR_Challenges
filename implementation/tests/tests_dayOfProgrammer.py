@@ -1,6 +1,6 @@
 import unittest
 import sys
-sys.path.append("../..")
+sys.path.append("..")
 from implementation import dayOfProgrammer0, dayOfProgrammer1
 
 
@@ -26,7 +26,6 @@ class test_dayOfProgrammer0(unittest.TestCase):
     def testIndep1(self):
         year = 1982
         self.assertEqual(dayOfProgrammer0(year), "13.09.1982")
-
 
 
 if __name__ == '__main__':

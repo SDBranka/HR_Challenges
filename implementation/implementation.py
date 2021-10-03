@@ -249,3 +249,76 @@ def pageCount(n, p):
     # print(min(forward_turn_count, backward_turn_count))
 
     return min(forward_turn_count, backward_turn_count)
+
+
+# 14
+def catAndMouse(x, y, z):
+    if abs(x-z) == abs(y-z):
+        return "Mouse C"
+    elif abs(x-z) < abs(y-z):
+        return "Cat A"
+    else:
+        return "Cat B"
+
+
+# 15
+# def formingMagicSquare(s):
+# not complete
+
+
+# 16
+# I originally solved for consecutive index locations
+def findSliceLength0(arr_to_check):
+    # print(f"arr_to_check = {arr_to_check}")
+    i = 0
+    check_pos = arr_to_check[0]
+    print(f"check_pos = {check_pos}")
+    # n = len(arr_to_check)
+    # if i < n-1:
+        # print(f"abs val check = {abs(check_pos - arr_to_check[i+1])}")
+    max_count = 0
+    while i < len(arr_to_check) and\
+        (arr_to_check[i] == check_pos\
+            or abs(check_pos - arr_to_check[i]) == 1):  
+        print(f"max_count = {max_count}")
+        max_count += 1
+        i += 1
+    return max_count
+
+def pickingNumbers0(a):
+    n = len(a)
+    # find sets
+    j = 0
+    max_count_arr = []
+    while j < n:
+        print(f"j = {j}")
+        check_arr = a[j:n]
+        # print(check_arr)
+        max_count_arr.append(findSliceLength0(check_arr))
+        j += 1
+    # print(max_count_arr)    
+    return max(max_count_arr)
+
+def pickingNumbers(a):
+    set_a = list(set(a))
+    n = len(set_a)
+    max_count_arr = []
+    if n == 0:
+        return 0
+    elif n == 1:
+        return a.count(set_a[0])
+    else:
+        for i in range(n - 1):
+            max_count = 0   
+            check_a = set_a[i]
+            abs_val_check = abs(check_a - set_a[i + 1])
+            if abs_val_check == 1:
+                max_count += a.count(set_a[i + 1]) +  a.count(check_a)
+            else:
+                max_count +=  a.count(check_a)
+            max_count_arr.append(max_count)
+    
+    return max(max_count_arr)
+
+
+# 17

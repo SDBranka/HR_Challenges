@@ -1,6 +1,6 @@
 import unittest
 import sys
-sys.path.append("../..")
+sys.path.append("..")
 from implementation import divisibleSumPairs
 
 
@@ -16,7 +16,6 @@ class test_birthday(unittest.TestCase):
         k = 3
         ar = [1, 3, 2, 6, 1, 2]
         self.assertEqual(divisibleSumPairs(n, k, ar), 5)
-
 
 
 if __name__ == '__main__':

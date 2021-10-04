@@ -5,6 +5,4 @@ import re
 import sys
 
 
-# #17 
-
 

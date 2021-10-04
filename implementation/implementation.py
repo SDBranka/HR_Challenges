@@ -322,3 +322,42 @@ def pickingNumbers(a):
 
 
 # 17
+def climbingLeaderboard0(ranked, player):
+    set_ranked = sorted(list(set(ranked)), reverse=True)
+    # print(set_ranked)
+    player_ranks = []
+    for score in player:
+        if score not in set_ranked:
+            set_ranked.append(score)
+            set_ranked = sorted(set_ranked, reverse=True)
+            # print(set_ranked)
+        player_ranks.append(set_ranked.index(score) + 1)
+        set_ranked = set_ranked[:set_ranked.index(score)]
+        # print(f"set_ranked = {set_ranked}")
+    return player_ranks
+
+def climbingLeaderboard1(ranked, player):
+    ranked = sorted(list(set(ranked)), reverse=True)
+    player = sorted(player, reverse=True)
+    
+    l=len(ranked)
+    j=0
+    
+    ans=[]
+    for i in range(len(player)):
+        while j<l and player[i]<ranked[j]:
+            j+=1
+        
+        ans.append(j+1)
+        
+    return ans[::-1]
+
+# 18
+def hurdleRace(k, height):
+    max_h = max(height)
+    if k >= max_h:
+        return 0
+    else:
+        return  max(height) - k
+
+# 19

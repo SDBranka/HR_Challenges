@@ -416,3 +416,16 @@ def beautifulDays(i, j, k):
         i += 1
     return beaut_days
 
+
+# 23
+def viralAdvertising(n):
+    recips = 5
+    liked = 2
+    cumul_recip = 2
+    if n == 1:
+        return cumul_recip
+    for i in range(1, n):
+        recips = liked * 3
+        liked = recips // 2
+        cumul_recip += liked
+    return cumul_recip

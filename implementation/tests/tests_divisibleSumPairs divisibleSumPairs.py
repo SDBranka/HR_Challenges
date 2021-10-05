@@ -4,7 +4,7 @@ sys.path.append("..")
 from implementation import divisibleSumPairs
 
 
-class test_birthday(unittest.TestCase):
+class test_divisibleSumPairs(unittest.TestCase):
     def testExample(self):
         n = 6
         k = 5

@@ -346,11 +346,11 @@ def climbingLeaderboard1(ranked, player):
     ans=[]
     for i in range(len(player)):
         while j<l and player[i]<ranked[j]:
-            j+=1
-        
+            j+=1        
         ans.append(j+1)
         
     return ans[::-1]
+
 
 # 18
 def hurdleRace(k, height):
@@ -360,4 +360,22 @@ def hurdleRace(k, height):
     else:
         return  max(height) - k
 
+
 # 19
+def designerPdfViewer(h, word):
+    alpha_list = [
+        "a", "b", "c", "d", "e",
+        "f", "g", "h", "i", "j",
+        "k", "l", "m", "n", "o",
+        "p", "q", "r", "s", "t", 
+        "u", "v", "w", "x", "y",
+        "z"
+    ]
+
+    heights_list = []
+    for letter in word:
+        heights_list.append(h[alpha_list.index(letter)])
+    return len(word) * max(heights_list)
+
+
+# 20

@@ -393,3 +393,16 @@ def utopianTree(n):
 
 
 # 21
+# for some reason on the site it would only accept my answer if the returns were reversed
+def angryProfessor(k, a):
+    count = 0
+    for student in a:
+        if student <= 0:
+            count += 1
+    if count >= k:
+        return "YES"
+    else:
+        return "NO"
+
+
+# 22

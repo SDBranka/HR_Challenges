@@ -6,7 +6,6 @@ import sys
 
 
 
-# #21
 
 
 

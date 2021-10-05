@@ -406,3 +406,13 @@ def angryProfessor(k, a):
 
 
 # 22
+def beautifulDays(i, j, k):
+    beaut_days = 0
+    while i <= j:
+        str_i = str(i)
+        rev_i = int(str_i[::-1])
+        if (abs(i - rev_i))/k % 1 == 0:
+            beaut_days += 1
+        i += 1
+    return beaut_days
+

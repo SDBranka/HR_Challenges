@@ -379,3 +379,17 @@ def designerPdfViewer(h, word):
 
 
 # 20
+def utopianTree(n):
+    sap_height = 1
+    if n == 0:
+        return sap_height
+    for i in range(1, n + 1):
+        print(f"i = {i}")
+        if i % 2 != 0:
+            sap_height *= 2
+        else:
+            sap_height += 1
+    return sap_height
+
+
+# 21

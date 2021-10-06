@@ -35,3 +35,16 @@ def jumpingOnClouds(c, k):
     else:
         e -= 1
     return e
+
+# 3
+def findDigits(n):
+    str_n = str(n)
+    m = len(str_n)
+    count = 0
+    for i in range(m):
+        if str_n[i] == "0":
+            pass
+        elif n % int(str_n[i]) == 0:
+            count += 1
+    return count
+

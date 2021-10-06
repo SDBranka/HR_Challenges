@@ -434,3 +434,14 @@ def viralAdvertising(n):
 # 24
 def saveThePrisoner(n, m, s):
     return (s - 1 + m - 1) % n + 1
+
+# 25
+def circularArrayRotation(a, k, queries):
+    n = k % len(a)
+    arr_a = a[-n:] + a[:-n]
+    # print(arr_a[:48])
+
+    q = []
+    for query in queries:
+        q.append(arr_a[query])
+    return q

@@ -429,3 +429,8 @@ def viralAdvertising(n):
         liked = recips // 2
         cumul_recip += liked
     return cumul_recip
+
+
+# 24
+def saveThePrisoner(n, m, s):
+    return (s - 1 + m - 1) % n + 1

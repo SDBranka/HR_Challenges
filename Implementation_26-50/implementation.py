@@ -4,6 +4,7 @@ import random
 import re
 import sys
 
+
 # 1
 def permutationEquation(p):
     n = len(p)
@@ -13,6 +14,7 @@ def permutationEquation(p):
         print(f"x = {x}")
         y.append(p.index(x + 1) + 1)
     return y
+
 
 # 2
 def jumpingOnClouds(c, k):
@@ -36,6 +38,7 @@ def jumpingOnClouds(c, k):
         e -= 1
     return e
 
+
 # 3
 def findDigits(n):
     str_n = str(n)
@@ -48,3 +51,21 @@ def findDigits(n):
             count += 1
     return count
 
+
+# 4
+def extraLongFactorials0(n):
+    if n == 1:
+        return n
+    else:
+        return n * extraLongFactorials0(n-1)
+
+def extraLongFactorials(n):
+    m = n
+    total = m
+    if m != 1:
+        for i in range(24, 0, -1):
+            total *= i
+    return total
+
+
+# 5

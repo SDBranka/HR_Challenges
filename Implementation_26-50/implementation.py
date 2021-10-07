@@ -69,3 +69,92 @@ def extraLongFactorials(n):
 
 
 # 5
+def appendAndDelete0(s, t, k):
+    ans = "Yes"
+    if s == t and k >= (2 * len(t)) + 1:
+        return ans
+    new_s = []
+    for i in range(len(t)):
+        if i < len(s):
+            if t[i] == s[i]:
+                new_s.append(s[i])
+            else:
+                new_s.append("_")
+                k -= 1
+        else:
+            new_s.append("_")
+    while i < len(s) - 1:
+        k -= 1
+        i += 1        
+    if k - new_s.count("_") < 0:
+        ans = "No"
+    return ans
+
+def appendAndDelete1(s, t, k):
+    n = len(s)
+    m = len(t)
+    count = k
+    i = 0
+    while i < m and s[i] == t[i]:
+        i += 1                
+        if i == n - 1:
+            break
+    needs_to_be_appended = n - i
+    count -= needs_to_be_appended
+    # if s is longer than t
+    if n > m:
+        count -= n - m
+    # to account for appending the needed letters
+    count -= needs_to_be_appended
+
+    if count < 0:
+        return "No"
+    else:
+        return "Yes"
+
+def appendAndDelete2(s, t, k):
+    n = len(s)
+    m = len(t)
+    remove = True
+    count = k
+    i = 0
+    while i < m and s[i] == t[i]:
+        if i == n - 1:
+            remove = False
+            break
+        i += 1                
+    # counts the length of letters that need to be popped and then appended
+    needs_to_be_appended = m - i
+    if remove:
+        count -= needs_to_be_appended
+    # if s is longer than t
+    if n > m:
+        count -= n - m
+    count -= needs_to_be_appended
+    if count < 0:
+        return "No"
+    else:
+        return "Yes"
+
+
+def appendAndDelete(s, t, k):
+    count = 0
+    n = len(s)
+    m = len(t)
+    while s[:n]!=t[:n]:
+        n -= 1
+        count += 1
+    need_to_append = ((m - n) + count)
+    if k < need_to_append:
+        ans = "No"
+    elif (n + m) <= k:
+        ans = "Yes"
+    elif 2 * m < k:
+        ans = "Yes"
+    elif k % 2 == need_to_append % 2:
+        ans = "Yes"
+    else:
+        ans = "No"
+    return ans
+
+# 6

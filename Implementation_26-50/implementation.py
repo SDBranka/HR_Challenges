@@ -63,7 +63,7 @@ def extraLongFactorials(n):
     m = n
     total = m
     if m != 1:
-        for i in range(24, 0, -1):
+        for i in range(m - 1, 0, -1):
             total *= i
     return total
 
@@ -158,3 +158,24 @@ def appendAndDelete(s, t, k):
     return ans
 
 # 6
+# first solution too slow, second solution solves by checking the first sqrt a<= and the last 
+# sqrt >=b and counts the number of whole integers instead of checking to see if each integer 
+# between a and b is a sqrt
+def squares0(a, b):
+    count = 0
+    # while a <= b:
+    for i in range(a, b+1):
+        # squr_a = math.sqrt(a)
+        if (i**(0.5)) % 1 == 0:
+            # print(f"squr_a = {squr_a}")    
+            count += 1
+    return count
+
+def squares(a, b):
+    count = 0
+    squr_a = math.ceil(math.sqrt(a))
+    squr_b = math.floor(math.sqrt(b))
+    for i in range(squr_a, squr_b+1):
+        count +=1
+    return count
+

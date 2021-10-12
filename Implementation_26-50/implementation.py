@@ -245,3 +245,57 @@ def taumBday(b, w, bc, wc, z):
 
 
 # 36
+# I set out by trying to determine the place where the max and min of each color balls exist, but
+# couldn't really decide how to proceed with checking and actually swapping the colors from container
+# to container, so I set out on my second attempt which satisfied all the presented test cases.
+def organizingContainers0(container):
+    n = len(container)
+    # find the location of the min and max of each color
+    min_locs = []
+    max_locs = []
+    for i in range(n):
+        min_x = 0
+        min_y = i
+        min = container[0][i]
+        max_x = 0
+        max_y = i
+        max = container[0][i]
+        for j in range(n):
+            if container[j][i] < min:
+                min_x = j
+                min_y = i
+                min = container[j][i]
+            if container[j][i] > max:
+                max_x = j
+                max_y = i
+                max = container[j][i]
+        min_locs.append([min_x, min_y])
+        max_locs.append([max_x, max_y])
+        # print(f"min_locs = {min_locs}")
+        # print(f"max_locs = {max_locs}")
+
+def organizingContainers(container):
+    n = len(container)
+    amount_per_container = []
+    num_per_color = [0] * n
+    for i in range(n):
+        # sum each line to see the max each container can hold
+        amount_per_container.append(sum(container[i]))
+        # sum the columns of our 2d array to get the total number of each color present
+        for j in range(n):
+            num_per_color[i] += container[j][i] 
+    # print(f"amount_per_container = {amount_per_container}")
+    # print(f"num_per_color = {num_per_color}")
+    for color in num_per_color:
+        # check to see if there is a container that can hold the amount of each color present
+        if color in amount_per_container:
+            # if a container of the correct size exists remove it from the list of options as it 
+            # is now occupied
+            amount_per_container.pop(amount_per_container.index(color))
+        else:
+            # if no container exists to contain a color of balls the swapping is impossible
+            return "Impossible"
+    # if all balls can fit into containers the swap is possible
+    return "Possible"
+
+# 37

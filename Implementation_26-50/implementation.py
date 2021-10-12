@@ -5,7 +5,7 @@ import re
 import sys
 
 
-# 1
+# 26
 def permutationEquation(p):
     n = len(p)
     y = []
@@ -16,7 +16,7 @@ def permutationEquation(p):
     return y
 
 
-# 2
+# 27
 def jumpingOnClouds(c, k):
     n = len(c)
     e = 100
@@ -39,7 +39,7 @@ def jumpingOnClouds(c, k):
     return e
 
 
-# 3
+# 28
 def findDigits(n):
     str_n = str(n)
     m = len(str_n)
@@ -52,7 +52,7 @@ def findDigits(n):
     return count
 
 
-# 4
+# 29
 def extraLongFactorials0(n):
     if n == 1:
         return n
@@ -68,7 +68,7 @@ def extraLongFactorials(n):
     return total
 
 
-# 5
+# 30
 def appendAndDelete0(s, t, k):
     ans = "Yes"
     if s == t and k >= (2 * len(t)) + 1:
@@ -136,7 +136,6 @@ def appendAndDelete2(s, t, k):
     else:
         return "Yes"
 
-
 def appendAndDelete(s, t, k):
     count = 0
     n = len(s)
@@ -158,7 +157,7 @@ def appendAndDelete(s, t, k):
     return ans
 
 
-# 6
+# 31
 # first solution too slow, second solution solves by checking the first sqrt a<= and the last 
 # sqrt >=b and counts the number of whole integers instead of checking to see if each integer 
 # between a and b is a sqrt
@@ -181,7 +180,7 @@ def squares(a, b):
     return count
 
 
-#7
+#32
 def libraryFine(d1, m1, y1, d2, m2, y2):
     if y2 > y1:
         fine = 0
@@ -200,7 +199,7 @@ def libraryFine(d1, m1, y1, d2, m2, y2):
     return fine
 
 
-# 8
+# 33
 def cutTheSticks(arr):
     answer = [len(arr)]
     while len(arr):
@@ -218,7 +217,7 @@ def cutTheSticks(arr):
     return answer
 
 
-# 9
+# 34
 def nonDivisibleSubset(k, s):
     arr = [0]*k
     for i in range(len(s)):
@@ -232,4 +231,17 @@ def nonDivisibleSubset(k, s):
     return res
 
 
-# 10
+# 35
+def taumBday(b, w, bc, wc, z):
+    if bc <= wc + z:
+        b_buy = bc
+    else:
+        b_buy = wc + z
+    if wc <= bc + z:
+        w_buy = wc
+    else:
+        w_buy = bc + z
+    return (b_buy * b) + (w_buy * w)
+
+
+# 36

@@ -23,7 +23,7 @@ if __name__ == '__main__':
 
 
 
-# #1 Sequence Equation
+# #26 Sequence Equation
 # https://www.hackerrank.com/challenges/permutation-equation/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
 # Given a sequence of n integers, p[1]...p[n] where 
 # each element is distinct and satisfies

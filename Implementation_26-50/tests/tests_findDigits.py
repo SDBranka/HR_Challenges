@@ -31,7 +31,7 @@ if __name__ == '__main__':
 
 
 
-# #3 Find Digits
+# #28 Find Digits
 # https://www.hackerrank.com/challenges/find-digits/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
 # An integer d is a divisor of an integer n if the 
 # remainder of n / d == 0.

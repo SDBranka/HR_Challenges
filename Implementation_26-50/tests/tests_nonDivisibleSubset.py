@@ -26,7 +26,7 @@ if __name__ == '__main__':
 
 
 
-# #9 Non-Divisible Subset
+# #34 Non-Divisible Subset
 # https://www.hackerrank.com/challenges/non-divisible-subset/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
 # Given a set of distinct integers, print the size of a
 # maximal subset of S where the sum of any 2 numbers in

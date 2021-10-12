@@ -157,6 +157,7 @@ def appendAndDelete(s, t, k):
         ans = "No"
     return ans
 
+
 # 6
 # first solution too slow, second solution solves by checking the first sqrt a<= and the last 
 # sqrt >=b and counts the number of whole integers instead of checking to see if each integer 
@@ -178,6 +179,7 @@ def squares(a, b):
     for i in range(squr_a, squr_b+1):
         count +=1
     return count
+
 
 #7
 def libraryFine(d1, m1, y1, d2, m2, y2):
@@ -214,3 +216,20 @@ def cutTheSticks(arr):
     
     answer.pop()
     return answer
+
+
+# 9
+def nonDivisibleSubset(k, s):
+    arr = [0]*k
+    for i in range(len(s)):
+        arr[s[i] % k] += 1
+    res = min(arr[0], 1)
+    for i in range(1, (k//2) + 1):
+        if i != k - i:
+            res += max(arr[i], arr[k - i])
+        else:
+            res += min(arr[i], 1)
+    return res
+
+
+# 10

@@ -179,3 +179,20 @@ def squares(a, b):
         count +=1
     return count
 
+#7
+def libraryFine(d1, m1, y1, d2, m2, y2):
+    if y2 > y1:
+        fine = 0
+    elif y2 == y1:
+        if m2 > m1:
+            fine = 0
+        elif m2 == m1:
+            if d2 >= d1:
+                fine = 0
+            else:
+                fine = 15 * (d1 - d2)
+        else:
+            fine = 500 * (m1 - m2)
+    else:
+        fine = 10000
+    return fine

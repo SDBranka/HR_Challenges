@@ -26,7 +26,6 @@ class test_organizingContainers(unittest.TestCase):
         self.assertEqual(organizingContainers(container), "Possible")
 
 
-
 if __name__ == '__main__':
     unittest.main()       
 

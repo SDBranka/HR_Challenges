@@ -40,7 +40,7 @@ if __name__ == '__main__':
 
 
 
-# #10 Taum and B'day
+# #35 Taum and B'day
 # https://www.hackerrank.com/challenges/taum-and-bday/problem
 # Taum is planning to celebrate the birthday of his 
 # friend, Diksha. There are two types of gifts that 

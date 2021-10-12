@@ -299,3 +299,27 @@ def organizingContainers(container):
     return "Possible"
 
 # 37
+def encryption(s):
+    L = len(s)
+    floor_sqrt_L = math.floor(math.sqrt(L))
+    ceil_sqrt_L = math.ceil(math.sqrt(L))
+    # print(f"fsL = {floor_sqrt_L}")
+    # print(f"csL = {ceil_sqrt_L}")
+
+    broken_s = []
+    if floor_sqrt_L * ceil_sqrt_L < L:
+        floor_sqrt_L += 1
+
+    for i in range(floor_sqrt_L):
+        broken_s.append(s[(i * ceil_sqrt_L):(i * ceil_sqrt_L) + ceil_sqrt_L])
+
+    coded_s = ""
+    for i in range(ceil_sqrt_L):
+        code = ""
+        for j in range(floor_sqrt_L):
+            if len(broken_s[j]) > i:
+                code += broken_s[j][i]
+        coded_s += f"{code} "
+    return coded_s
+
+# 38

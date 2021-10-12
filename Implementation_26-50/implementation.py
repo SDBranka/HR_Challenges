@@ -196,3 +196,21 @@ def libraryFine(d1, m1, y1, d2, m2, y2):
     else:
         fine = 10000
     return fine
+
+
+# 8
+def cutTheSticks(arr):
+    answer = [len(arr)]
+    while len(arr):
+        shortest_stick = min(arr)
+        # print(f"shortest_stick = {shortest_stick}")
+        arr = list(map(lambda x: x - shortest_stick, arr))
+        # print(f"arr after lambda = {arr}")
+        for i in range(len(arr) - 1, -1, -1):
+            if arr[i] == 0:
+                arr.pop(i)
+        # print(f"arr pop = {arr}")
+        answer.append(len(arr))
+    
+    answer.pop()
+    return answer

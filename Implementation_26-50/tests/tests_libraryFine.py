@@ -26,7 +26,6 @@ class test_libraryFine(unittest.TestCase):
         self.assertEqual(libraryFine(d1, m1, y1, d2, m2, y2), 0)
 
 
-
 if __name__ == '__main__':
     unittest.main()       
 

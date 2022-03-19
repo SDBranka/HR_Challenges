@@ -323,3 +323,186 @@ def encryption(s):
     return coded_s
 
 # 38
+# misses fringe cases
+def biggerIsGreater0(w):
+    list_w = list(w)
+    answ = "no answer"
+    for i in range(len(w) - 1, 0, -1):
+        if list_w[i] > list_w[i - 1]:
+            list_w[i], list_w[i - 1] = list_w[i - 1], list_w[i]
+            answ = ""
+            for i in range(len(list_w)):
+                answ += list_w[i]
+            return answ
+    return answ
+
+# index error in removing values from srt_w
+def biggerIsGreater1(w):
+    n = len(w)
+    list_w = list(w)
+    srt_w = sorted(w)       
+    answ = "no answer"
+    loop_run = True
+    for i in range(n-1, 0, -1):
+        if loop_run:
+            for j in range(i-1, -1, -1):
+                if list_w[i] > list_w[j]:
+                    list_w[i], list_w[j] = list_w[j], list_w[i]
+                    loop_run = False
+                    move_ind = j
+                    break
+    if not loop_run:
+        ind_arr = []
+        for i in range(n):
+            ind_arr.append(srt_w.index(list_w[i]))
+        print(f"ind_arr={ind_arr}")
+        print(f"srt_w = {srt_w}")
+        answ = ""
+        for i in range(move_ind+1):
+            # clear letters from srt_w
+            srt_w.pop(ind_arr[i]-i)
+            # print(f"i = {i}")
+            # print(f"ind_arr[i] = {ind_arr[i]}")
+            # print(f"srt_w = {srt_w}")
+            answ += list_w[i]
+        for i in range(len(srt_w)):
+            answ += srt_w[i]
+    return answ
+
+# works for all test cases in 0 and 4 but all the hidden cases fail
+def biggerIsGreater2(w):
+    n = len(w)
+    list_w = list(w)
+    srt_w = sorted(w)       
+    answ = "no answer"
+    loop_run = True
+    for i in range(n-1, 0, -1):
+        if loop_run:
+            for j in range(i-1, -1, -1):
+                if list_w[i] > list_w[j]:
+                    list_w[i], list_w[j] = list_w[j], list_w[i]
+                    loop_run = False
+                    move_ind = j
+                    break
+    if not loop_run:
+        answ = ""
+        for i in range(move_ind+1):
+            # clear letters from srt_w
+            srt_w.pop(srt_w.index(list_w[i]))
+            answ += list_w[i]
+        for i in range(len(srt_w)):
+            answ += srt_w[i]
+    return answ
+
+def biggerIsGreater(w):
+    lst_w = list(w)
+    n = len(lst_w)
+    # Find non-increasing suffix
+    i = n - 1
+    while i > 0 and lst_w[i - 1] >= lst_w[i]:
+        i -= 1
+    if i <= 0:
+        return "no answer"
+    
+    # Find successor to pivot
+    j = n - 1
+    while lst_w[j] <= lst_w[i - 1]:
+        j -= 1
+    lst_w[i - 1], lst_w[j] = lst_w[j], lst_w[i - 1]
+    
+    # Reverse suffix
+    lst_w[i : ] = lst_w[n - 1 : i - 1 : -1]
+    return "".join(lst_w)
+
+# 39
+def getTotalX1(a, b):
+    factors_of_b = []
+    b_fact = []
+    works_w_a = []
+    omega_factors = []
+    
+    # find and build array of factors of integers from array b
+    for i in range(len(b)):
+        for j in range(1,b[i]+1):
+            if b[i] % j == 0:
+                factors_of_b.append(j)
+    # print(f"factors_of_b: {factors_of_b}")
+
+    # build an array of singular instances of factors that work with each element of array factors_of_b
+    for i in range (len(factors_of_b)):
+        if factors_of_b.count(factors_of_b[i]) == len(b):
+            if factors_of_b[i] not in b_fact:
+                b_fact.append(factors_of_b[i])
+    # print(f"b_fact: {b_fact}")
+
+    # find and build array of factors of which elements of a are factors
+    for i in range (len(a)):
+        for j in range(len(b_fact)):
+            if b_fact[j] % a[i] == 0:
+                works_w_a.append(b_fact[j])
+    # print(works_w_a)
+
+    # build array of singular instances that meet all conditions
+    for i in range (len(works_w_a)):
+        if works_w_a.count(works_w_a[i]) == len(a):
+            if works_w_a[i] not in omega_factors:
+                omega_factors.append(works_w_a[i])
+    # print(omega_factors)
+
+    return (len(omega_factors))
+
+def getTotalX(a, b):
+    factors_of_b = []
+    b_fact = []
+    works_w_a = []
+    omega_factors = []
+    
+    # find and build array of factors of integers from array b
+    for i in range(len(b)):
+        for j in range(1,b[i]+1):
+            if b[i] % j == 0:
+                factors_of_b.append(j)
+    # print(f"factors_of_b: {factors_of_b}")
+
+    # build an array of singular instances of factors that work with each element of array factors_of_b
+    # build an array of singular instances of factors
+    b_fact = list(set(factors_of_b))
+    # print(f"b_fact: {b_fact}")
+    # eliminate elements that arent factors of all elements of b
+    i = 0
+    while i < len(b_fact):
+        if factors_of_b.count(b_fact[i]) != len(b):
+            b_fact.pop(i)
+        else:
+            i += 1
+    # print(f"b_fact: {b_fact}")
+    
+    # find and build array of factors of which elements of a are factors
+    for i in range (len(a)):
+        for j in range(len(b_fact)):
+            if b_fact[j] % a[i] == 0:
+                works_w_a.append(b_fact[j])
+    # # print(f"works_w_a: {works_w_a}")
+
+    # # build array of singular instances that meet all conditions
+    omega_factors = list(set(works_w_a))
+    # print(f"omega_factors: {omega_factors}")
+    # eliminate elements that arent factors of all elements of b
+    i = 0
+    while i < len(omega_factors):
+        if works_w_a.count(omega_factors[i]) != len(a):
+            omega_factors.pop(i)
+        else:
+            i += 1
+    # print(f"omega_factors: {omega_factors}")
+
+    return (len(omega_factors))
+
+
+
+
+
+
+
+# 40
+

@@ -21,7 +21,7 @@ class test_simpleArraySum(unittest.TestCase):
         self.assertEqual(arr, "0.500000\n0.333333\n0.166667\n")
 
     def testThree(self):
-        ar = [1, 2, 3, -1, -2, -3, 0, 0]
+        arr = [1, 2, 3, -1, -2, -3, 0, 0]
         self.assertEqual(arr, "0.375000\n0.375000\n0.250000")
 
 

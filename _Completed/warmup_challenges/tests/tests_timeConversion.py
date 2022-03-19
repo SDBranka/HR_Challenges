@@ -6,7 +6,7 @@ sys.path.append("..")
 from warmup_challenges import timeConversion
 
 
-class test_miniMaxSum0(unittest.TestCase):
+class test_timeConversion(unittest.TestCase):
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def assert_stdout(self, n, expected_output, mock_stdout):
         timeConversion(n)

@@ -123,7 +123,7 @@ def birthday(s, d, m):
     elif len(s) > 1:
         if m <= len(s):
             for i in range(len(s) - m + 1):
-                # print(f"i+m = {i+m}")
+                print(f"i+m = {i+m}")
                 if sum(s[i:i+m]) == d:
                     count += 1
         else:

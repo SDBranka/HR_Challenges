@@ -524,3 +524,51 @@ def kaprekarNumbers(p, q):
         # works too
         # print(f"{' '.join(map(str, answer))}")
 
+# 41
+# too slow
+def beautifulTriplets0(d, arr):
+    triplet_count = 0
+    for j in range(1, len(arr)):
+        for i in range(j, -1, -1):
+            if arr[j] - arr[i] == d:
+                for k in range(j + 1, len(arr)):
+                    if arr[k] - arr[j] == d:
+                        triplet_count += 1
+    return triplet_count
+
+# def beautifulTriplets(d, arr):
+#     a = set(arr)
+#     return len([1 for i in arr if i+d in a and i+d*2 in a])
+
+
+
+
+
+# Sample Input
+# n = 7, d = 3
+# arr = [1, 2, 4, 5, 7, 8, 10]
+# Sample Output
+# 3
+
+# Example
+arr = [2, 2, 3, 4, 5]
+d = 1
+# Output
+# 3
+
+# test case 8
+# n = 10000 
+# d = 1
+# arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+#         10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
+#         20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
+#         30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 
+#         40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 
+#         50, 51, 52, 53, 54, 55, 56, 57, 58, 59,{-truncated-}
+#         ..., 10000]
+#  Output
+# 9996
+
+
+
+print(beautifulTriplets(d, arr))

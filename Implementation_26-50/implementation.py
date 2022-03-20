@@ -499,10 +499,28 @@ def getTotalX(a, b):
     return (len(omega_factors))
 
 
-
-
-
-
-
 # 40
+def kaprekarNumbers(p, q):
+    answer = []
+    
+    for i in range(p, q + 1):
+        # print(f"i: {i}")
+        if i < 4:
+            if i == 1:
+                answer.append(i)
+        else:
+            i_squared_str = str(i**2)
+            a = int(i_squared_str[:len(i_squared_str)//2])
+            # print(f"a: {a}")
+            b = int(i_squared_str[len(i_squared_str)//2:])
+            # print(f"b: {b}")
+            if a + b == i:
+                answer.append(i)
+    # return answer
+    if len(answer) == 0:
+        print("INVALID RANGE")
+    else:
+        print(" ".join(str(x) for x in answer))
+        # works too
+        # print(f"{' '.join(map(str, answer))}")
 

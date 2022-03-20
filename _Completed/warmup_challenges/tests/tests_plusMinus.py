@@ -6,7 +6,7 @@ sys.path.append("..")
 from warmup_challenges import plusMinus
 
 
-class test_simpleArraySum(unittest.TestCase):
+class test_plusMinus(unittest.TestCase):
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def assert_stdout(self, n, expected_output, mock_stdout):
         plusMinus(n)

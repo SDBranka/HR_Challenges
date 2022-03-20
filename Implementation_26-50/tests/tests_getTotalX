@@ -8,25 +8,21 @@ class test_getTotalX(unittest.TestCase):
     def testSampleCaseZero(self):
         a = [2, 4]
         b = [16, 32, 96]
-        print(1)
         self.assertEqual(getTotalX(a, b), 3)
 
     def testSampleCaseOne(self):
         a = [3, 4]
         b = [24, 48]
-        print(2)
         self.assertEqual(getTotalX(a, b), 2)
 
     def testCaseZero(self):
         a = [2, 4] 
         b = [16, 32, 96]
-        print(3)
         self.assertEqual(getTotalX(a, b), 3)
 
     def testCaseEight(self):
         a = [3, 4] 
         b = [24, 48]
-        print(4)
         self.assertEqual(getTotalX(a, b), 2)
 
 

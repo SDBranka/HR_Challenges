@@ -528,7 +528,7 @@ def kaprekarNumbers(p, q):
 # too slow
 def beautifulTriplets0(d, arr):
     triplet_count = 0
-    for j in range(1, len(arr)):
+    for j in range(1, len(arr) - 1):
         for i in range(j, -1, -1):
             if arr[j] - arr[i] == d:
                 for k in range(j + 1, len(arr)):
@@ -536,12 +536,9 @@ def beautifulTriplets0(d, arr):
                         triplet_count += 1
     return triplet_count
 
-# def beautifulTriplets(d, arr):
-#     a = set(arr)
-#     return len([1 for i in arr if i+d in a and i+d*2 in a])
-
-
-
+def beautifulTriplets(d, arr):
+    a = set(arr)
+    return len([1 for i in arr if i+d in a and i+d*2 in a])
 
 
 # Sample Input
@@ -551,7 +548,7 @@ def beautifulTriplets0(d, arr):
 # 3
 
 # Example
-arr = [2, 2, 3, 4, 5]
+a = [2, 2, 3, 4, 5]
 d = 1
 # Output
 # 3
@@ -569,6 +566,38 @@ d = 1
 #  Output
 # 9996
 
+# print(beautifulTriplets(d, arr))
 
 
-print(beautifulTriplets(d, arr))
+
+# 41
+def minimumDistances(a):
+    min_dist = -1
+    a_set = list(set(a))
+
+    for i in a_set:
+        # print(f"i: {i}")
+        # print(f"type(i): {type(i)}")
+        if a.count(i) > 1:
+            indices = findIndex(a, i)
+            # print(f"indices: {indices}")
+            absolute_difference = abs(indices[0] - indices[1])       
+            if min_dist == -1:
+                min_dist = absolute_difference
+            elif min_dist > absolute_difference:
+                min_dist = absolute_difference
+    return min_dist
+
+def findIndex(a, i):
+    print(f"ib: {i}")
+    print(f"type(i)b: {type(i)}")
+    check_value = i
+    indices = [i for i, x in enumerate(a) if x == check_value]
+    # print(f"indices: {indices}")
+    return indices
+
+
+# 42
+
+
+

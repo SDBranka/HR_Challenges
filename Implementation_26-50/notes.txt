@@ -1,0 +1,3 @@
+- Unittest for kaprekarNumbers not Complete
+- beautifulTriplets not 100%
+    -too slow

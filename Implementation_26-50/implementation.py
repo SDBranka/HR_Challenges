@@ -606,19 +606,4 @@ def howManyGames(p, d, m, s):
         p = max(p - d, m)
     return game_count 
 
-# Example
-p, d, m, s = 20, 3, 6, 70
-# Output
-# 5
-
-# Sample Input 0
-# p, d, m, s = 20, 3, 6, 80
-# Sample Output 0
-# 6
-
-# Sample Input 1
-# p, d, m, s = 20, 3, 6, 85
-# Sample Output 1
-# 7
-
-print(howManyGames(p, d, m, s))
+# 43

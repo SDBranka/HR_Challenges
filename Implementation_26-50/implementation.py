@@ -568,8 +568,6 @@ d = 1
 
 # print(beautifulTriplets(d, arr))
 
-
-
 # 41
 def minimumDistances(a):
     min_dist = -1
@@ -607,3 +605,38 @@ def howManyGames(p, d, m, s):
     return game_count 
 
 # 43
+def timeInWords(h, m):
+    time_words = [
+        "zero", "one", "two", "three", "four", "five",
+        "six", "seven", "eight", "nine", "ten",
+        "eleven", "twelve", "thirteen", "fourteen", "quarter",
+        "sixteen", "seventeen", "eighteen", "nineteen", "twenty",
+        "twenty one", "twenty two", "twenty three", "twenty four","twenty five",
+        "twenty six", "twenty seven", "twenty eight", "twenty nine","half"
+    ]
+
+    if m == 0:
+        return f"{time_words[h]} o' clock"
+    # determine minutes variable
+    elif m == 1 or m == 59:
+        minutes = "minute"
+    else:
+        minutes = "minutes"
+    # determine if m <= 30 or if m > 30
+    if m > 30: 
+        m = time_words[60 - m]
+        words = "to"
+        h = time_words[(h+1) % 12 or 12]
+    else:
+        m = time_words[m]
+        words = "past"
+        h = time_words[h]
+    # if m == to 15, 40, 45 exclude minutes variable from return
+    if not time_words.index(m) % 15:
+        return f"{m} {words} {h}"
+    return f"{m} {minutes} {words} {h}"
+
+# 44
+
+
+

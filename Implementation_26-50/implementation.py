@@ -637,6 +637,29 @@ def timeInWords(h, m):
     return f"{m} {minutes} {words} {h}"
 
 # 44
+def chocolateFeast(n, c, m):
+    money = n
+    cost_per_choc = c
+    wrapper_cost = m
 
+    # compute the number of chocolates Bobby can buy start total chocolate count
+    total_chocolates = money // cost_per_choc
+    # print(f"total_chocolatesA: {total_chocolates}")
+    # compute the number of wrappers Bobby can get from the chocolates
+    num_of_wrappers = total_chocolates
+    # purchase new chocolates with wrappers
+    total_chocolates, num_of_wrappers = buyWithWrappers(num_of_wrappers, wrapper_cost, total_chocolates)
+    # print(f"total_chocolatesB: {total_chocolates}")
+    # print(f"num_of_wrappersA: {num_of_wrappers}")
+    return total_chocolates
 
+def buyWithWrappers(num_of_wrappers, wrapper_cost, total_chocolates):
+    while num_of_wrappers >= wrapper_cost:
+        new_chocolates = num_of_wrappers // wrapper_cost
+        total_chocolates += new_chocolates
+        # print(f"total_chocolates in buy function: {total_chocolates}")
+        num_of_wrappers = num_of_wrappers % wrapper_cost
+        # print(f"num_of_wrappers in buy function: {num_of_wrappers}")
+        num_of_wrappers += new_chocolates
+    return total_chocolates, num_of_wrappers
 

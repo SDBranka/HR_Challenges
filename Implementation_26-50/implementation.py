@@ -678,7 +678,32 @@ def serviceLane(width, cases):
 
 # 46
 def workbook(n, k, arr):
+    workbook = buildWorkbook(arr, k)
+    # print(f"workbook: {workbook}")
+    return len([1 for i, page in enumerate(workbook) if i+1 in page])
 
 
+def buildWorkbook(chapters, problems_per_page,):
+    workbook = []
+    page = []
+    # for chapter_problems in chapters:
+    for chapter_problems in chapters:
+        # go into new chapter @ problem 1 of chapter_problems problems
+        problem = 1
+        # while there are still problems in the chapter
+        while problem <= chapter_problems:
+            # add the problem to the page and move to the next problem
+            page.append(problem)
+            problem += 1
+            # if the page is full or it is the last problem of the chapter, add the page to the workbook and start a new page
+            if len(page) == problems_per_page or problem > chapter_problems:
+                workbook.append(page)
+                page = []
+            # print(f"page: {page}")
+    # print(f"workbook: {workbook}")
+    return workbook
 
-print(workbook(n, k, arr))
+
+# 47
+
+

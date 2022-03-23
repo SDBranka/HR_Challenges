@@ -1,0 +1,2 @@
+- forming magic square not complete
+    -https://www.hackerrank.com/challenges/magic-square-forming/problem?isFullScreen=true

@@ -51,49 +51,55 @@
 
 
 
-def check(i):
-    sq = str(i**2)
-    le = len(str(i))
-    r = sq[-le:]
-    l = sq[:-le] or '0'
-    return sum(map(int,(l,r)))==i
+# def check(i):
+#     sq = str(i**2)
+#     le = len(str(i))
+#     r = sq[-le:]
+#     l = sq[:-le] or '0'
+#     return sum(map(int,(l,r)))==i
 
-def kaprekarNumbers(p, q):
-    return [i for i in range(p,q+1) if check(i)]
+# def kaprekarNumbers(p, q):
+#     return [i for i in range(p,q+1) if check(i)]
 
-p = int(input())
-q = int(input())
-print(*kaprekarNumbers(p, q) or ["INVALID RANGE"])
+# p = int(input())
+# q = int(input())
+# print(*kaprekarNumbers(p, q) or ["INVALID RANGE"])
 
 
 
-def kaprekar(n):
-    d = len(str(n))
-    n_sqr = str(n*n)
-    right = int(n_sqr[len(n_sqr)-d:])
-    left = n_sqr[:len(n_sqr)-d]
-    if left == '':
-        left = 0
-    left = int(left)
-    #print("left:", left, "right:", right)
-    return left+right == n
+# def kaprekar(n):
+#     d = len(str(n))
+#     n_sqr = str(n*n)
+#     right = int(n_sqr[len(n_sqr)-d:])
+#     left = n_sqr[:len(n_sqr)-d]
+#     if left == '':
+#         left = 0
+#     left = int(left)
+#     #print("left:", left, "right:", right)
+#     return left+right == n
     
-p = int(input())
-q = int(input())
-a = []
-for i in range(p, q+1):
-    if kaprekar(i):
-        a.append(i)
-if len(a) == 0:
-    print("INVALID RANGE")
-else:
-    print(' '.join(str(c) for c in a))
+# p = int(input())
+# q = int(input())
+# a = []
+# for i in range(p, q+1):
+#     if kaprekar(i):
+#         a.append(i)
+# if len(a) == 0:
+#     print("INVALID RANGE")
+# else:
+#     print(' '.join(str(c) for c in a))
 
 
 
 
 
-lines_yesterday = "50"
-lines_today = "108"
-lines_more = int(lines_today) - int(lines_yesterday)
-print(lines_more)
+# lines_yesterday = "50"
+# lines_today = "108"
+# lines_more = int(lines_today) - int(lines_yesterday)
+# print(lines_more)
+
+
+
+
+
+# workbook = [[[] for i in range(problems_per_page)] for i in range(num_chapters)]

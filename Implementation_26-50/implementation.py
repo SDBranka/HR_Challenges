@@ -663,3 +663,26 @@ def buyWithWrappers(num_of_wrappers, wrapper_cost, total_chocolates):
         num_of_wrappers += new_chocolates
     return total_chocolates, num_of_wrappers
 
+
+# 45
+def serviceLane(width, cases):
+    # return [min(width[i:i+w]) for i, w in cases]
+    return [min(width[case[0]:case[1]+1]) for case in cases]
+
+    # for i, case in enumerate(cases):
+        # print(f"case{i}: {case}")
+        # for w in width[case[0]:case[1]+1]:
+        #     print(f"w: {w}")
+        # print(f"width[case[0]:case[1]+1]{i}: {min(width[case[0]:case[1]+1])}")
+
+# def findMin(width, case):
+#     return min(width[case[0]:case[1]+1])    
+
+    # return len([1 for i in arr if i+d in a and i+d*2 in a])
+    # indices = [i for i, x in enumerate(a) if x == check_value]
+
+
+width = [2, 3, 2, 1]
+cases = [[1, 2], [2, 4]]
+
+print(serviceLane(width, cases))

@@ -675,14 +675,10 @@ def serviceLane(width, cases):
         #     print(f"w: {w}")
         # print(f"width[case[0]:case[1]+1]{i}: {min(width[case[0]:case[1]+1])}")
 
-# def findMin(width, case):
-#     return min(width[case[0]:case[1]+1])    
 
-    # return len([1 for i in arr if i+d in a and i+d*2 in a])
-    # indices = [i for i, x in enumerate(a) if x == check_value]
+# 46
+def workbook(n, k, arr):
 
 
-width = [2, 3, 2, 1]
-cases = [[1, 2], [2, 4]]
 
-print(serviceLane(width, cases))
+print(workbook(n, k, arr))

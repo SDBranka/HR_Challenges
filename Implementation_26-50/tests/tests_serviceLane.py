@@ -10,7 +10,7 @@ class test_serviceLane(unittest.TestCase):
         cases = [[1, 2], [2, 4]]
         self.assertEqual(serviceLane(width, cases), [2, 1])
 
-    def testExampleCase(self):
+    def testSampleCase(self):
         width = [2, 3, 1, 2, 3, 2, 3, 3]
         cases = [[0, 3], [4, 6], [6, 7], [3, 5], [0, 7]]
         self.assertEqual(serviceLane(width, cases), [1, 2, 3, 2, 1])

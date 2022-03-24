@@ -739,44 +739,4 @@ def flatlandSpaceStations(n, c):
     return maxd
 
 
-
-# Example
-# n = 3
-# c = [1]
-# There are n = 3 cities and city 1 has a space station. They 
-# occur consecutively along a route. City 0 is 1 - 0 = 1 unit 
-# away and city 2 is 2 - 1 = 1 units away. City 1 is 0 units 
-# from its nearest space station as one is located there. The 
-# maximum distance is 1.
-
-
-
-
-# Sample Input 0
-n = 5
-m = 2
-c = [0, 4]
-# Sample Output 0
-# 2
-# Explanation 0
-# This sample corresponds to following graphic:
-
-# imgs/hreasy5.png
-
-# The distance to the nearest space station for each city is listed below:
-#  c[0] has distance 0km, as it contains a space station.
-#  c[1] has distance 1km to the space station in c[0].
-#  c[2] has distance 2km  to the space stations in c[0] and c[4].
-#  c[3] has distance 1km to the space station in c[4].
-#  c[4] has distance 0km, as it contains a space station.
-# We then take max(0,1,2,1,0) = 2.
-
-# Sample Input 1
-# n = 6, m = 6
-# c = [0, 1, 2, 4, 3, 5]
-# Sample Output 1
-# 0
-
-
-print(flatlandSpaceStations(n, c))
-
+# 48

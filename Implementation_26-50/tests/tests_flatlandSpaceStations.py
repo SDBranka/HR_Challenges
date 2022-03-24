@@ -6,10 +6,19 @@ from implementation import flatlandSpaceStations
 
 class test_flatlandSpaceStations(unittest.TestCase):
     def testExampleCase(self):
-        n = 2
-        k = 3
-        arr = [4, 2]
-        self.assertEqual(flatlandSpaceStations(n, k, arr), 1)
+        n = 3
+        c = [1]
+        self.assertEqual(flatlandSpaceStations(n, c), 1)
+
+    def testSampleCase0(self):
+        n = 5
+        c = [0, 4]
+        self.assertEqual(flatlandSpaceStations(n, c), 2)
+
+    def testSampleCase1(self):
+        n = 6
+        c = [0, 1, 2, 4, 3, 5]
+        self.assertEqual(flatlandSpaceStations(n, c), 0)
 
 
 if __name__ == '__main__':

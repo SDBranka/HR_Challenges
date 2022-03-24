@@ -103,3 +103,31 @@
 
 
 # workbook = [[[] for i in range(problems_per_page)] for i in range(num_chapters)]
+
+
+
+
+
+
+
+# def closest(lst, K):
+	
+# 	return lst[min(range(len(lst)), key = lambda i: abs(lst[i]-K))]
+	
+# Driver code
+# lst = [3.64, 5.2, 9.42, 9.35, 8.5, 8]
+# K = 9.1
+# print(closest(lst, K))
+
+
+
+
+
+
+
+
+
+
+
+
+

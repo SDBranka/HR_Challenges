@@ -3,6 +3,7 @@ import os
 import random
 import re
 import sys
+from turtle import distance
 
 
 # 26
@@ -686,7 +687,6 @@ def workbook(n, k, arr):
 def buildWorkbook(chapters, problems_per_page,):
     workbook = []
     page = []
-    # for chapter_problems in chapters:
     for chapter_problems in chapters:
         # go into new chapter @ problem 1 of chapter_problems problems
         problem = 1
@@ -705,5 +705,78 @@ def buildWorkbook(chapters, problems_per_page,):
 
 
 # 47
+def flatlandSpaceStations0(n, c):
+    num_of_cities = n
+    space_station_locations = c
 
+    # print("#########")
+    # for i in range(1, num_of_cities + 1):
+        # print(f"num_of_cities + 1: {num_of_cities + 1}")
+        # print(f'{i}: {abs(i - min(space_station_locations, key = lambda x: abs(x-i)))}')
+
+    # create a list of distances from each city to the nearest space station
+    min_distance_to_space_station = [abs(i - min(space_station_locations, key = lambda x: abs(x-i))) for i in range(num_of_cities)]
+    print(f"min_distance_to_space_station: {min_distance_to_space_station}")
+
+
+def flatlandSpaceStations1(n, c):
+    num_of_cities = n
+    space_station_locations = c
+
+    return max([abs(i - min(space_station_locations, key = lambda x: abs(x-i))) for i in range(num_of_cities)])
+
+# too slow
+def flatlandSpaceStations2(n, c):
+    c.sort()
+    return max([abs(i - min(c, key = lambda x: abs(x-i))) for i in range(n)])
+
+
+def flatlandSpaceStations(n, c):
+    c.sort()
+    maxd = max(c[0], n-1 - c[-1])
+    for i in range(len(c)-1):
+        maxd = max((c[i+1]-c[i])//2, maxd)
+    return maxd
+
+
+
+# Example
+# n = 3
+# c = [1]
+# There are n = 3 cities and city 1 has a space station. They 
+# occur consecutively along a route. City 0 is 1 - 0 = 1 unit 
+# away and city 2 is 2 - 1 = 1 units away. City 1 is 0 units 
+# from its nearest space station as one is located there. The 
+# maximum distance is 1.
+
+
+
+
+# Sample Input 0
+n = 5
+m = 2
+c = [0, 4]
+# Sample Output 0
+# 2
+# Explanation 0
+# This sample corresponds to following graphic:
+
+# imgs/hreasy5.png
+
+# The distance to the nearest space station for each city is listed below:
+#  c[0] has distance 0km, as it contains a space station.
+#  c[1] has distance 1km to the space station in c[0].
+#  c[2] has distance 2km  to the space stations in c[0] and c[4].
+#  c[3] has distance 1km to the space station in c[4].
+#  c[4] has distance 0km, as it contains a space station.
+# We then take max(0,1,2,1,0) = 2.
+
+# Sample Input 1
+# n = 6, m = 6
+# c = [0, 1, 2, 4, 3, 5]
+# Sample Output 1
+# 0
+
+
+print(flatlandSpaceStations(n, c))
 

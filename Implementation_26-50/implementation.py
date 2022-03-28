@@ -740,3 +740,77 @@ def flatlandSpaceStations(n, c):
 
 
 # 48
+# too slow
+def fairRations0(B):
+    # - if there are an odd number of people with an odd number of breads there
+    #   can be no solution
+    # check to see if solution is possible
+    # count_odds = 0
+    # for b in B:
+    #     if b % 2 != 0:
+    #         count_odds += 1
+    # # print(f"count_odds: {count_odds}")
+    # if count_odds % 2 != 0:
+    #     return "NO"
+
+    # find the odd values in B
+    odds = [i for i, b in enumerate(B) if b % 2 != 0]
+    # print(f"odds: {odds}")
+    # - if there are an odd number of people with an odd number of breads there
+    #   can be no solution
+    # check to see if solution is possible
+    if len(odds) % 2 != 0:
+        return "NO"
+    
+    loaves_given = 0
+    for i, b in enumerate(B):
+        if b % 2 != 0:
+            B[i] += 1
+            B[i+1] += 1
+            loaves_given += 2
+    return loaves_given
+
+
+def fairRations(B):
+    # loaves_given = 0
+    # for i, b in enumerate(B):
+    #     try:
+    #         if b % 2 != 0:
+    #             B[i] += 1
+    #             B[i+1] += 1
+    #             loaves_given += 2
+    #     except:
+    #         return "NO"
+    # return loaves_given
+
+
+    loaves_given = 0
+    for i in range(len(B)):
+        try:
+            if B[i] % 2 != 0:
+                B[i+1] += 1
+                loaves_given += 2
+        except:
+            return "NO"
+    return loaves_given
+
+
+
+
+
+# Example
+B = [4, 5, 6, 7]
+# Output:
+# 4
+
+# Sample 0
+B = [2, 3, 4, 5, 6]   
+# Output:
+# 4
+
+# Sample 1
+B = [1, 2]
+# Output:
+# NO
+
+print(fairRations(B))
